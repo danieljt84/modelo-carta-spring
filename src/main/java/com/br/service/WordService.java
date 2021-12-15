@@ -77,22 +77,23 @@ public class WordService {
 
 	public XWPFDocument switchModeloCarta(String nomeEmpresa) throws InvalidFormatException, IOException {
 		XWPFDocument doc = null;
+		Path currentRelativePath = Paths.get("");
+
 		switch (nomeEmpresa) {
 		case "A MULTI MERCHAN LTDA":
-			Path currentRelativePath = Paths.get("");
 			 doc = new XWPFDocument(
 					OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"/resources/CARTA-MULTI MERCHAN.docx"));
 			break;
 		case "CRIART CRIACOES PROMOCIONAIS EIRELI":
-			 doc = new XWPFDocument(OPCPackage.open("\\resources\\CARTA-CRIART.docx"));
+			 doc = new XWPFDocument(OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"/resources/CARTA-CRIART.docx"));
              
 			break;
 		case "PINCELART SERVICOS PROMOCIONAIS EIRELI":
-			doc = new XWPFDocument(OPCPackage.open("\\resources\\CARTA-PINCELART.docx"));
+			doc = new XWPFDocument(OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"/resources/CARTA-PINCELART.docx"));
 			break;
 		case "4P PROMOCOES E EVENTOS":
 			doc = new XWPFDocument(
-					OPCPackage.open("\\resources\\CARTA-4P PROMOÇÕES.docx"));
+					OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"/resources/CARTA-4P PROMOÇÕES.docx"));
 			break;
 		}
 		return doc;
