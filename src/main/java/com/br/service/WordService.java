@@ -81,7 +81,7 @@ public class WordService {
 		case "A MULTI MERCHAN LTDA":
 			Path currentRelativePath = Paths.get("");
 			 doc = new XWPFDocument(
-					OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"resources\\CARTA-MULTI MERCHAN.docx"));
+					OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"/resources/CARTA-MULTI MERCHAN.docx"));
 			break;
 		case "CRIART CRIACOES PROMOCIONAIS EIRELI":
 			 doc = new XWPFDocument(OPCPackage.open("\\resources\\CARTA-CRIART.docx"));
