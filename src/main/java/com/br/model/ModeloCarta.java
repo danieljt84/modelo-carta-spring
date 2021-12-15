@@ -10,7 +10,7 @@ public abstract class ModeloCarta{
 	String nomePromotor;
 	Long cartPromotor;
 	Integer serie;
-	Long identidade;
+	String identidade;
 	String nomeEmpresa;
 	
 	public LocalDate getData() {
@@ -49,10 +49,10 @@ public abstract class ModeloCarta{
 	public void setSerie(Integer serie) {
 		this.serie = serie;
 	}
-	public Long getIdentidade() {
+	public String getIdentidade() {
 		return identidade;
 	}
-	public void setIdentidade(Long identidade) {
+	public void setIdentidade(String identidade) {
 		this.identidade = identidade;
 	}
 	public String getNomeEmpresa() {

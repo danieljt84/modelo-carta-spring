@@ -54,7 +54,7 @@ public class WordService {
 							r.setText(text, 0);
 						}
 						if (text != null && text.contains("identidade")) {
-							text = text.replace("identidade", carta.getIdentidade().toString());
+							text = text.replace("identidade", carta.getIdentidade());
 							r.setText(text, 0);
 						}
 						if (text != null && text.contains("nomeEmpresa")) {
