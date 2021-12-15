@@ -4,6 +4,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -77,9 +79,9 @@ public class WordService {
 		XWPFDocument doc = null;
 		switch (nomeEmpresa) {
 		case "A MULTI MERCHAN LTDA":
-			
+			Path currentRelativePath = Paths.get("");
 			 doc = new XWPFDocument(
-					OPCPackage.open("\\resources\\CARTA-MULTI MERCHAN.docx"));
+					OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"resources\\CARTA-MULTI MERCHAN.docx"));
 			break;
 		case "CRIART CRIACOES PROMOCIONAIS EIRELI":
 			 doc = new XWPFDocument(OPCPackage.open("\\resources\\CARTA-CRIART.docx"));
