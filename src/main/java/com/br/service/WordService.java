@@ -31,8 +31,16 @@ public class WordService {
 				if (runs != null) {
 					for (XWPFRun r : runs) {
 						String text = r.getText(0);
-						if (text != null && text.contains("data")) {
-							text = text.replace("dia", carta.getData().toString());
+						if (text != null && text.contains("dia")) {
+							text = text.replace("dia",String.valueOf(carta.getData().getDayOfMonth()));
+							r.setText(text, 0);
+						}
+						if (text != null && text.contains("mes")) {
+							text = text.replace("mes",String.valueOf(carta.getData().getMonth()));
+							r.setText(text, 0);
+						}
+						if (text != null && text.contains("ano")) {
+							text = text.replace("ano",String.valueOf(carta.getData().getYear()));
 							r.setText(text, 0);
 						}
 						if (text != null && text.contains("localLoja")) {
