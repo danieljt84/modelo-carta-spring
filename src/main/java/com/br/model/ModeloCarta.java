@@ -37,10 +37,10 @@ public abstract class ModeloCarta{
 	public void setNomePromotor(String nomePromotor) {
 		this.nomePromotor = nomePromotor;
 	}
-	public String getCartNumero() {
+	public String getcartPromotor() {
 		return cartPromotor;
 	}
-	public void setCartNumero(String cartNumero) {
+	public void setcartPromotor(String cartNumero) {
 		this.cartPromotor = cartNumero;
 	}
 	public Integer getSerie() {
