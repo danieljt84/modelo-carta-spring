@@ -52,11 +52,11 @@ public class WordService {
 							r.setText(text, 0);
 						}
 						if (text != null && text.contains("nomePromotor")) {
-							text = text.replace("nomePromotor", carta.getEnderecoLoja());
+							text = text.replace("nomePromotor", carta.getNomePromotor());
 							r.setText(text, 0);
 						}
 						if (text != null && text.contains("cartNumero")) {
-							text = text.replace("cartNumero", carta.getEnderecoLoja());
+							text = text.replace("cartNumero", String.valueOf(carta.getCartNumero()));
 							r.setText(text, 0);
 						}
 						if (text != null && text.contains("serie")) {
