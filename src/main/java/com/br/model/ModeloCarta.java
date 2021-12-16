@@ -8,7 +8,7 @@ public abstract class ModeloCarta{
 	String localLoja;
 	String enderecoLoja;
 	String nomePromotor;
-	Long cartPromotor;
+	String cartPromotor;
 	Integer serie;
 	String identidade;
 	String nomeEmpresa;
@@ -37,10 +37,10 @@ public abstract class ModeloCarta{
 	public void setNomePromotor(String nomePromotor) {
 		this.nomePromotor = nomePromotor;
 	}
-	public Long getCartNumero() {
+	public String getCartNumero() {
 		return cartPromotor;
 	}
-	public void setCartNumero(Long cartNumero) {
+	public void setCartNumero(String cartNumero) {
 		this.cartPromotor = cartNumero;
 	}
 	public Integer getSerie() {

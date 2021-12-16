@@ -23,7 +23,7 @@ import com.br.model.ModeloCarta;
 @Service
 public class WordService {
 
-	public byte[] reportCartaSimples(CartaSimples carta) {
+	public byte[] reportCartaSimples(CartaSimples carta) throws Exception {
 		try {
 			XWPFDocument doc = switchModeloCarta(carta.getNomeEmpresa());
 			for (XWPFParagraph p : doc.getParagraphs()) {
@@ -55,8 +55,8 @@ public class WordService {
 							text = text.replace("nomePromotor", carta.getNomePromotor());
 							r.setText(text, 0);
 						}
-						if (text != null && text.contains("cartNumero")) {
-							text = text.replace("cartNumero", String.valueOf(carta.getCartNumero()));
+						if (text != null && text.contains("cartPromotor")) {
+							text = text.replace("cartPromotor", carta.getCartNumero());
 							r.setText(text, 0);
 						}
 						if (text != null && text.contains("serie")) {
@@ -79,7 +79,7 @@ public class WordService {
 			return outputStream.toByteArray();
 		} catch (Exception e) {
 			e.printStackTrace();
-			return null;
+			throw e;
 		}
 	}
 
