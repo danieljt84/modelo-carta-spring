@@ -89,18 +89,18 @@ public class WordService {
 		switch (nomeEmpresa) {
 		case "A MULTI MERCHAN LTDA":
 			 doc = new XWPFDocument(
-					OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"resources\\CARTA-MULTI MERCHAN.docx"));
+					OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"/resources/CARTA-MULTI MERCHAN.docx"));
 			break;
 		case "CRIART CRIACOES PROMOCIONAIS EIRELI":
-			 doc = new XWPFDocument(OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"resources\\CARTA-CRIART.docx"));
+			 doc = new XWPFDocument(OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"/resources/CARTA-CRIART.docx"));
              
 			break;
 		case "PINCELART SERVICOS PROMOCIONAIS EIRELI":
-			doc = new XWPFDocument(OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"resources\\CARTA-PINCELART.docx"));
+			doc = new XWPFDocument(OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"/resources/CARTA-PINCELART.docx"));
 			break;
 		case "4P PROMOCOES E EVENTOS":
 			doc = new XWPFDocument(
-					OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"resources\\CARTA-4P.docx"));
+					OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"/resources/CARTA-4P.docx"));
 			break;
 		}
 		return doc;
