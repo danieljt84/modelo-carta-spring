@@ -18,10 +18,63 @@ import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.springframework.stereotype.Service;
 
 import com.br.model.CartaSimples;
+import com.br.model.CartaSimplesSp;
 import com.br.model.ModeloCarta;
 
 @Service
 public class WordService {
+
+	public byte[] reportCartaSimplesSp(CartaSimplesSp carta) throws Exception {
+		try {
+			XWPFDocument doc = switchModeloCartaSimplesSp(carta.getNomeEmpresa());
+			for (XWPFParagraph p : doc.getParagraphs()) {
+				List<XWPFRun> runs = p.getRuns();
+				if (runs != null) {
+					for (XWPFRun r : runs) {
+						String text = r.getText(0);
+						if (text != null && text.contains("enderecoLoja")) {
+							text = text.replace("enderecoLoja", carta.getEnderecoLoja());
+							r.setText(text, 0);
+						}
+						if (text != null && text.contains("nomePromotor")) {
+							text = text.replace("nomePromotor", carta.getNomePromotor());
+							r.setText(text, 0);
+						}
+						if (text != null && text.contains("cart")) {
+							text = text.replace("cart", carta.getcartPromotor());
+							r.setText(text, 0);
+						}
+						if (text != null && text.contains("serie")) {
+							text = text.replace("serie", carta.getSerie().toString());
+							r.setText(text, 0);
+						}
+						if (text != null && text.contains("identidade")) {
+							text = text.replace("identidade", carta.getIdentidade());
+							r.setText(text, 0);
+						}
+						if (text != null && text.contains("nomeEmpresa")) {
+							text = text.replace("nomeEmpresa", carta.getNomeEmpresa());
+							r.setText(text, 0);
+						}
+						if (text != null && text.contains("cpf")) {
+							text = text.replace("cpf", carta.getCpf());
+							r.setText(text, 0);
+						}
+						if (text != null && text.contains("empresaContratante")) {
+							text = text.replace("empresaContratante", carta.getEmpresaContratante());
+							r.setText(text, 0);
+						}
+					}
+				}
+			}
+			ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+			doc.write(outputStream);
+			return outputStream.toByteArray();
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw e;
+		}
+	}
 
 	public byte[] reportCartaSimples(CartaSimples carta) throws Exception {
 		try {
@@ -56,7 +109,7 @@ public class WordService {
 							r.setText(text, 0);
 						}
 						if (text != null && text.contains("cartPromotor")) {
-							text = text.replace("cartPromotor", carta.getCartNumero());
+							text = text.replace("cartPromotor", carta.getcartPromotor());
 							r.setText(text, 0);
 						}
 						if (text != null && text.contains("serie")) {
@@ -101,7 +154,31 @@ public class WordService {
 			break;
 		case "4P PROMOCOES E EVENTOS":
 			doc = new XWPFDocument(
-					OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"/resources/CARTA-4P PROMOÇÕES.docx"));
+					OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"/resources/CARTA-4P.docx"));
+			break;
+		}
+		return doc;
+	}
+ 
+	public XWPFDocument switchModeloCartaSimplesSp(String nomeEmpresa) throws InvalidFormatException, IOException {
+		XWPFDocument doc = null;
+		Path currentRelativePath = Paths.get("");
+
+		switch (nomeEmpresa) {
+		case "A MULTI MERCHAN LTDA":
+			 doc = new XWPFDocument(
+					OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"/resources/CARTA SIMPLES SP-MULTI MERCHAN.docx"));
+			break;
+		case "CRIART CRIACOES PROMOCIONAIS EIRELI":
+			 doc = new XWPFDocument(OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"/resources/CARTA SIMPLES SP-CRIART.docx"));
+             
+			break;
+		case "PINCELART SERVICOS PROMOCIONAIS EIRELI":
+			doc = new XWPFDocument(OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"/resources/CARTA SIMPLES SP-PINCELART.docx"));
+			break;
+		case "4P PROMOCOES E EVENTOS":
+			doc = new XWPFDocument(
+					OPCPackage.open(currentRelativePath.toAbsolutePath().toString()+"/resources/CARTA SIMPLES SP-4P.docx"));
 			break;
 		}
 		return doc;

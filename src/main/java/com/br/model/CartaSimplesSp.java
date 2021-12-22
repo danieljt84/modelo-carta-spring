@@ -16,18 +16,6 @@ public class CartaSimplesSp extends ModeloCarta {
 	public void setEmpresaContratante(String empresaContratante) {
 		this.empresaContratante = empresaContratante;
 	}
-	public LocalDate getData() {
-		return data;
-	}
-	public void setData(LocalDate data) {
-		this.data = data;
-	}
-	public String getLocalLoja() {
-		return localLoja;
-	}
-	public void setLocalLoja(String localLoja) {
-		this.localLoja = localLoja;
-	}
 	public String getEnderecoLoja() {
 		return enderecoLoja;
 	}
@@ -64,7 +52,4 @@ public class CartaSimplesSp extends ModeloCarta {
 	public void setNomeEmpresa(String nomeEmpresa) {
 		this.nomeEmpresa = nomeEmpresa;
 	}
-	public void setData() {		
-	}
-
 }
