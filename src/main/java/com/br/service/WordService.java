@@ -25,7 +25,7 @@ public class WordService {
 
 	public byte[] reportCartaSimples(CartaSimples carta) throws Exception {
 		try {
-			XWPFDocument doc = switchModeloCarta(carta.getNomeEmpresa());
+			XWPFDocument doc = switchModeloCartaSimples(carta.getNomeEmpresa());
 			for (XWPFParagraph p : doc.getParagraphs()) {
 				List<XWPFRun> runs = p.getRuns();
 				if (runs != null) {
@@ -83,7 +83,7 @@ public class WordService {
 		}
 	}
 
-	public XWPFDocument switchModeloCarta(String nomeEmpresa) throws InvalidFormatException, IOException {
+	public XWPFDocument switchModeloCartaSimples(String nomeEmpresa) throws InvalidFormatException, IOException {
 		XWPFDocument doc = null;
 		Path currentRelativePath = Paths.get("");
 

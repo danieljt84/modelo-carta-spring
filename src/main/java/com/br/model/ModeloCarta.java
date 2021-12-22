@@ -12,55 +12,75 @@ public abstract class ModeloCarta{
 	Integer serie;
 	String identidade;
 	String nomeEmpresa;
+	String cpf;
+	String empresaContratante;
 	
-	public LocalDate getData() {
-		return data;
-	}
-	public void setData(LocalDate data) {
-		this.data = data;
-	}
-	public String getLocalLoja() {
-		return localLoja;
-	}
-	public void setLocalLoja(String localLoja) {
-		this.localLoja = localLoja;
-	}
-	public String getEnderecoLoja() {
-		return enderecoLoja;
-	}
-	public void setEnderecoLoja(String enderecoLoja) {
-		this.enderecoLoja = enderecoLoja;
-	}
-	public String getNomePromotor() {
-		return nomePromotor;
-	}
-	public void setNomePromotor(String nomePromotor) {
-		this.nomePromotor = nomePromotor;
-	}
-	public String getcartPromotor() {
+	private String getCartPromotor() {
 		return cartPromotor;
 	}
-	public void setcartPromotor(String cartNumero) {
+	private void setCartPromotor(String cartPromotor) {
+		this.cartPromotor = cartPromotor;
+	}
+	private String getCpf() {
+		return cpf;
+	}
+	private void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	private String getEmpresaContratante() {
+		return empresaContratante;
+	}
+	private void setEmpresaContratante(String empresaContratante) {
+		this.empresaContratante = empresaContratante;
+	}
+	private LocalDate getData() {
+		return data;
+	}
+	private void setData(LocalDate data) {
+		this.data = data;
+	}
+	private String getLocalLoja() {
+		return localLoja;
+	}
+	private void setLocalLoja(String localLoja) {
+		this.localLoja = localLoja;
+	}
+	private String getEnderecoLoja() {
+		return enderecoLoja;
+	}
+	private void setEnderecoLoja(String enderecoLoja) {
+		this.enderecoLoja = enderecoLoja;
+	}
+	private String getNomePromotor() {
+		return nomePromotor;
+	}
+	private void setNomePromotor(String nomePromotor) {
+		this.nomePromotor = nomePromotor;
+	}
+	private String getcartPromotor() {
+		return cartPromotor;
+	}
+	private void setcartPromotor(String cartNumero) {
 		this.cartPromotor = cartNumero;
 	}
-	public Integer getSerie() {
+	private Integer getSerie() {
 		return serie;
 	}
-	public void setSerie(Integer serie) {
+	private void setSerie(Integer serie) {
 		this.serie = serie;
 	}
-	public String getIdentidade() {
+	private String getIdentidade() {
 		return identidade;
 	}
-	public void setIdentidade(String identidade) {
+	private void setIdentidade(String identidade) {
 		this.identidade = identidade;
 	}
-	public String getNomeEmpresa() {
+	private String getNomeEmpresa() {
 		return nomeEmpresa;
 	}
-	public void setNomeEmpresa(String nomeEmpresa) {
+	private void setNomeEmpresa(String nomeEmpresa) {
 		this.nomeEmpresa = nomeEmpresa;
 	}
-	public void setData() {		
+	private void setData() {		
 	}
 }

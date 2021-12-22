@@ -2,13 +2,19 @@ package com.br.model;
 
 import java.time.LocalDate;
 
-public class CartaSimples extends ModeloCarta {
+public class CartaSimplesSp extends ModeloCarta {
 	
-	private String[] campos = {"data","localLoja","enderecoLoja","nomePromotor","cartNumero","serie"
-			,"identidade","nomeEmpresa","enderecoEmpresa","cnpjEmpresa","IEEmpresa"};
-	
-	public String[] getCampos() {
-		return campos;
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	public String getEmpresaContratante() {
+		return empresaContratante;
+	}
+	public void setEmpresaContratante(String empresaContratante) {
+		this.empresaContratante = empresaContratante;
 	}
 	public LocalDate getData() {
 		return data;
@@ -60,4 +66,5 @@ public class CartaSimples extends ModeloCarta {
 	}
 	public void setData() {		
 	}
+
 }
