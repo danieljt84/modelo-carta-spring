@@ -108,8 +108,8 @@ public class WordService {
 							text = text.replace("nomePromotor", carta.getNomePromotor());
 							r.setText(text, 0);
 						}
-						if (text != null && text.contains("cartPromotor")) {
-							text = text.replace("cartPromotor", carta.getcartPromotor());
+						if (text != null && text.contains("cart")) {
+							text = text.replace("cart", carta.getcartPromotor());
 							r.setText(text, 0);
 						}
 						if (text != null && text.contains("serie")) {
