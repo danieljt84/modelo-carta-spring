@@ -18,7 +18,7 @@ public class ModeloCartaServerApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("https://modelo-carta-angular.herokuapp.com/","http://localhost:4200");
+				registry.addMapping("/**").allowedOrigins("http**");
 			}
 		};
 	}
