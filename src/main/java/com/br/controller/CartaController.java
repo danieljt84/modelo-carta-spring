@@ -20,7 +20,6 @@ public class CartaController {
 	
 	@ResponseBody @PostMapping("/cartasimples")
 	public ResponseEntity<?> makeCartaSimples(@RequestBody CartaSimples carta) {
-		System.out.println(carta.getLocalLoja());
 		try {
 			byte[] bytes = wordService.reportCartaSimples(carta);
             HttpHeaders headers = new HttpHeaders();
