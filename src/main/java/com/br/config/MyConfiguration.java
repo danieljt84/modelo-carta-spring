@@ -9,7 +9,7 @@ public class MyConfiguration implements WebMvcConfigurer  {
 	
 	@Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
+        registry.addMapping("https://modelo-carta-angular.herokuapp.com")
                 .allowedMethods("*");
     }
 
