@@ -34,10 +34,10 @@ public class CartaSimplesSp extends ModeloCarta {
 	public void setcartPromotor(String cartNumero) {
 		this.cartPromotor = cartNumero;
 	}
-	public Integer getSerie() {
+	public String getSerie() {
 		return serie;
 	}
-	public void setSerie(Integer serie) {
+	public void setSerie(String serie) {
 		this.serie = serie;
 	}
 	public String getIdentidade() {
