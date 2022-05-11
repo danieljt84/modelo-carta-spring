@@ -209,26 +209,30 @@ public class WordService {
 		Path currentRelativePath = Paths.get("");
 
 		switch (nomeEmpresa) {
-		case "A MULTI MERCHAN LTDA":
+		case "MMERCHAN":
 			doc = new XWPFDocument(OPCPackage
 					.open(currentRelativePath.toAbsolutePath().toString() + "/resources/CARTA-MULTI MERCHAN.docx"));
 			break;
-		case "CRIART CRIACOES PROMOCIONAIS EIRELI":
+		case "CRIART":
 			doc = new XWPFDocument(
 					OPCPackage.open(currentRelativePath.toAbsolutePath().toString() + "/resources/CARTA-CRIART.docx"));
 
 			break;
-		case "PINCELART SERVICOS PROMOCIONAIS EIRELI":
+		case "PINCELART":
 			doc = new XWPFDocument(OPCPackage
 					.open(currentRelativePath.toAbsolutePath().toString() + "/resources/CARTA-PINCELART.docx"));
 			break;
-		case "4P PROMOCOES E EVENTOS":
+		case "4P":
 			doc = new XWPFDocument(
 					OPCPackage.open(currentRelativePath.toAbsolutePath().toString() + "/resources/CARTA-4P.docx"));
 			break;
 		case "MKT":
 			doc = new XWPFDocument(
 					OPCPackage.open(currentRelativePath.toAbsolutePath().toString() + "/resources/CARTA-MKT.docx"));
+			break;
+		case "4PPREMIUM":
+			doc = new XWPFDocument(
+					OPCPackage.open(currentRelativePath.toAbsolutePath().toString() + "/resources/CARTA-4PPREMIUM.docx"));
 			break;
 		}
 		return doc;
@@ -260,7 +264,12 @@ public class WordService {
 			doc = new XWPFDocument(OPCPackage
 					.open(currentRelativePath.toAbsolutePath().toString() + "/resources/CARTA SIMPLES SP-MKT.docx"));
 			break;
+		case "4PPREMIUM":
+			doc = new XWPFDocument(
+					OPCPackage.open(currentRelativePath.toAbsolutePath().toString() + "/resources/CARTA SIMPLES SP-4PPREMIUM.docx"));
+			break;
 		}
+		
 		return doc;
 	}
 
@@ -289,6 +298,10 @@ public class WordService {
 		case "MKT":
 			doc = new XWPFDocument(OPCPackage
 					.open(currentRelativePath.toAbsolutePath().toString() + "/resources/CARTA ATACADAO-MKT.docx"));
+			break;
+		case "4PPREMIUM":
+			doc = new XWPFDocument(
+					OPCPackage.open(currentRelativePath.toAbsolutePath().toString() + "/resources/CARTA ATACADAO-4PPREMIUM.docx"));
 			break;
 		}
 		return doc;
